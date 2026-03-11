@@ -1,0 +1,213 @@
+*{
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: rgb(0, 0, 33);
+    color:#fff;
+    font-family: 'Poppins',sans-serif;
+}
+/*NAV-BAR*/
+header{
+    background-color:rgb(2, 2, 53) ;
+}
+header nav{
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+header nav .right ul{
+    display: flex;
+    gap:2rem;
+}
+header nav .right ul li{
+    list-style: none;
+}
+header nav .left{
+    font-size:1.5rem;
+}
+header nav .right ul li a{
+    color:white;
+    text-decoration: none;;
+}
+header nav .right ul li a:hover{
+    color:rgb(126,126,153);
+    font-size: 1.04rem;
+}
+/*TOGGLE BTN*/
+header nav .toggle_btn{
+    display:none;
+    font-size: 1.25rem;
+}
+/*DROPDOWN MENU*/
+.dropdown_menu{
+    display:none;/*because when we click toggle_btn then we allow that to display:block*/
+    position:absolute;
+    right:2rem;
+    top:60px;
+    width:200px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+}
+.dropdown_menu.open{/*here written with no gap bcz representing same element class*/
+    display:block;
+}
+.dropdown_menu li{
+    display:flex;
+    padding:0.7rem;/*here if we give margin so clickable portion become less ,bcz padding merges with content ,not margin*/
+    justify-content: center;
+    align-items: center;
+}
+.dropdown_menu a{
+    color:white;
+    text-decoration: none;;
+}
+/*FIRST SECTION*/
+main{
+    display: flex;/*so first section become flex item and flex:1; can work*/
+    flex-direction:column;
+    min-height:100vh;
+}
+.firstsection{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.firstsection div{
+    width:30%;
+}
+.firstsection .leftf{
+    font-size: 2.5rem;
+}
+.myname{
+    color:rgb(125, 83, 192);
+}
+/*section seperator*/
+main hr{
+    width:95%;
+    margin: auto;
+    height:1px;
+    border:0px;
+    margin-top: 1rem;
+    margin-bottom:2rem;
+    background-color:rgb(116, 116, 182);
+}
+/*section headings*/
+h1{
+    width:90%;
+    margin:auto;
+    color: rgb(125, 83, 192);
+}
+/*SECOND SECTION*/
+.secondsection .box{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:2rem 0;
+    width:90%;
+    margin:auto;
+}
+.secondsection .box .right{
+    width:0;
+    background-color: rgb(125, 83, 192);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:0.75rem;
+    font-size: 0.75rem;
+    color:#fff;
+    font-weight:700;
+    transition: width 1s ease-in-out 0.1s;/*adding transition in right element*/
+}
+.secondsection .box .right.show{
+    width:30%;
+}
+/*THIRD SECTION*/
+.thirdsection h2{
+    width:90%;/*for centering + */
+    margin:auto;/*for centering*/
+    padding:1rem 0;
+    color:rgb(171, 171, 209);
+}
+.thirdsection .about{
+    width:85%;
+    margin:auto;
+    text-align:justify;
+}
+.thirdsection .rows{
+    padding:0.75rem 0;
+}
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    margin:auto;
+    padding:0 3rem;
+    background-color:rgb(2, 2, 53) ;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+footer .box{
+    /*width:calc((100% - 3rem) / 3);/*this can cause overflow bcz allow no wrap*/
+    flex:1 1 0;
+
+}
+footer .box h2{
+    padding:1rem 0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:lavender;
+}
+footer .box ul{
+    list-style: none;
+}
+footer .box ul li{
+    padding:0.25rem 0.25rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+footer .box ul li a{
+    text-decoration: none;
+    color:white;
+}
+/*RESPONSIVE DESIGN*/
+/*tablet*/
+@media screen and (max-width:800px){
+    header nav .right{
+        display: none;
+    }
+    header nav .toggle_btn{
+    display:block;
+    font-size: 1.25rem;
+    }
+}
+@media screen and (max-width:600px){
+    main .firstsection{
+        flex-direction:column;
+    }
+    .secondsection .box{
+    flex-direction: column;
+    }
+    .secondsection .box .right.show{
+    width:90%;
+    }
+    .breakit{
+        word-break: break-all;
+    }
+    .dropdown_menu{
+        left:2rem;
+        right:2rem;
+        width:unset;
+    }
+}
+
